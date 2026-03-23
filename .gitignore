@@ -1,0 +1,32 @@
+# Dart/Flutter
+.dart_tool/
+.packages
+build/
+pubspec.lock
+pubspec_overrides.yaml
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Environment
+.env
+
+# OS
+.DS_Store
+
+# Melos
+.melos/
+
+# Coverage
+coverage/
+
+# Deploy artifacts (copied packages inside each function)
+apis/functions/*/packages/
+
+# Generated
+*.g.dart
+*.freezed.dart

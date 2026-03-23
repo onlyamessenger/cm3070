@@ -1,0 +1,41 @@
+name: fortify
+repository: https://github.com/fortify/fortify
+
+packages:
+  - apps/*
+  - packages/*
+  - apis/functions/*
+  - apis/database
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: dart analyze --fatal-infos
+    exec:
+      concurrency: 1
+    packageFilters:
+      dirExists: lib
+
+  test:
+    run: dart test
+    exec:
+      concurrency: 1
+    packageFilters:
+      dirExists: test
+
+  format:
+    run: dart format .
+    exec:
+      concurrency: 1
+
+  format:check:
+    run: dart format --set-exit-if-changed .
+    exec:
+      concurrency: 1
+
+  deploy:
+    description: "Deploy all AppWrite functions"
+    run: bash scripts/deploy_functions.sh

@@ -1,0 +1,8 @@
+name: fortify_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.10.7
+
+dev_dependencies:
+  melos: ^6.1.0
